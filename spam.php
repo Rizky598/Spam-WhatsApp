@@ -207,17 +207,17 @@ function processGitHubFiles($files, $localFolder) {
 lagi:
 clear();
 echo color("yellow"," WARNING ! ! !\n");
-echo color("red"," DOSA DI TANGGUNG ANDA !\n");
+echo color("red"," DOSA DI TANGGUNG ANDA !🤣😊\n");
 sleep(5);
 clear();
 
 $versi = file_get_contents('version.txt');
-echo color("green"," 𝕊𝔼-ℙ𝔸𝕄   ");
+echo color("green"," [ Rizky.088 ]   ");
 echo color("nevy","Version ".$versi."\n\n\n");
 
-echo color("green"," 1. Whatsapp\n");
-echo color("green"," 2. Pesan Manual (isi text bebas)\n");
-echo color("yellow"," 3. Support Admin\n\n");
+echo color("green"," 1: Whatsapp\n");
+echo color("green"," 2: Pesan Manual (isi text bebas)\n");
+echo color("yellow"," 3: Support Admin\n\n");
 echo color("green"," Pilih : ");
 $aaa1 = trim(fgets(STDIN));
 if ($aaa1 == 1) {
