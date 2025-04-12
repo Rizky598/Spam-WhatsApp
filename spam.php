@@ -225,9 +225,8 @@ echo color("green","⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄
 
 echo color("yellow"," WARNING ! ! !\n");
 
-echo color("red"," DOSA DI TANGGUNG ANDA😹!\n");
-
-color("green","====================================\n");
+echo color("red"," DOSA DI TANGGUNG ANDA😹!
+================================\n");
 
 sleep(5);
 clear();
