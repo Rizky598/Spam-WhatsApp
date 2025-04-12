@@ -243,7 +243,7 @@ if ($aaa1 == 2) {
 }
 if ($aaa1 == 3) {
   clear();
-  $url = "https://github.com/hanx-666/spam-wa/blob/e6c28c4de6ca768f9f014f57a1f2fb831c674d8a/donasi.jpg";
+  $url = "https://www.instagram.com/rizky.0_o?igsh=bGJ6dGdvYnR6Y3c2";
   shell_exec("termux-open-url $url");
   echo color("green","???");
   exit();
