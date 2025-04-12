@@ -1,2 +1,8 @@
-# Spam-WhatsApp
-Script ini lumayan ngeselin juga loh Bray mantap buat ngerjain temen yang lagi main ML🤣😊
+# Command In Termux        
+```
+pkg update && pkg upgrade -y         
+pkg install git -y         
+pkg instal php -y       
+git clone https://github.com/hanx-666/spam-wa       
+cd spam-wa        
+php spam.php        
