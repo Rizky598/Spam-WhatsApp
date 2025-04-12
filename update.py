@@ -25,9 +25,9 @@ system('rm -rf version.txt')
 
 #-------to update
 sleep(0.1)
-system('wget https://raw.githubusercontent.com/hanx-666/spam-wa/main/spam.php')
-system('wget https://raw.githubusercontent.com/hanx-666/spam-wa/main/version.txt')
-system('wget https://raw.githubusercontent.com/hanx-666/spam-wa/main/donasi.jpg')
+system('wget https://github.com/Rizky598/Spam-WhatsApp')
+system('wget cd Spam-WhatsApp')
+system('wget ')
 print(r+"└─ "+w+"\033[1;37m>> Script sukses di update<<")
 sleep(1.5)
 
