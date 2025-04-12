@@ -14,11 +14,11 @@ $$grup komunitas hacker$$
 =================================
 masukkan aja script yang di bawah untuk script termux😊
 
-# Command In Termux
+# Command In Termux😊
 ```
 pkg update && pkg upgrade -y
 pkg install git -y
 pkg instal php -y
-git clone https://github.com/hanx-666/spam-wa
-cd spam-wa
+git clone https://github.com/Rizky598/Spam-WhatsApp
+cd Spam-WhatsApp
 php spam.php
