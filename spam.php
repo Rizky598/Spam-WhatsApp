@@ -391,8 +391,6 @@ else{
 
 
 
-
-
 //CAIRIN
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -417,7 +415,6 @@ else{
 
 
 
-
 //ADIRAKU
 $curl = curl_init();
 curl_setopt_array($curl, array(
@@ -439,8 +436,6 @@ if ($result == 'success') {
 else{
   echo " ADIRAKU ".$response."\n";
 }
-
-
 
 
 echo color("yellow"," Done Sensei..\n");
