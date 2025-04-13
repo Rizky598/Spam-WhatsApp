@@ -1099,6 +1099,31 @@ else{
 }
 
 
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+
 echo color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
