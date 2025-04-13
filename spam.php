@@ -232,12 +232,12 @@ sleep(5);
 clear();
 
 $versi = file_get_contents('version.txt');
-echo color("green","⣴⣾⣿⣿⣿⣿⣷⣦
+echo color("red","⣴⣾⣿⣿⣿⣿⣷⣦
 ⣿⣿⣿⣿⣿⣿⣿⣿
 ⡟⠛⠽⣿⣿⠯⠛⢻
 ⣧⣀⣀⡾⢷⣀⣀⣼
  ⡏⢽⢴⡦⡯⢹ 
- ⠙⢮⣙⣋⡵⠋ ");
+ ⠙⢮⣙⣋⡵⠋  semoga temennya ngambek ya bray😹");
 echo color("green"," [ Rizky.088 ]   ");
 echo color("nevy","Version ".$versi."\n\n\n");
 
