@@ -1120,8 +1120,9 @@ $result = fetch_value($response,'{"message":"','","');
 if ($result == 'success') {
   echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
 }
-
-
+else{
+  echo " UANGME ".$response."\n";
+}
 
 
 //ADIRAKU
@@ -1141,6 +1142,9 @@ $response = curl_exec($curl);
 $result = fetch_value($response,'{"message":"','","');
 if ($result == 'success') {
   echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
+}
+else{
+  echo " UANGME ".$response."\n";
 }
 
 
@@ -1163,6 +1167,9 @@ $result = fetch_value($response,'{"message":"','","');
 if ($result == 'success') {
   echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
 }
+else{
+  echo " UANGME ".$response."\n";
+}
 
 
 
@@ -1184,7 +1191,9 @@ $result = fetch_value($response,'{"message":"','","');
 if ($result == 'success') {
   echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
 }
-
+else{
+  echo " UANGME ".$response."\n";
+}
 
 
 //UANGME
@@ -1222,26 +1231,12 @@ $result = fetch_value($response,'{"code":"','","');
 if ($result == '200') {
   echo color("green"," ".acak(3)." Spam Whatsapp Ke ".$nomor."\n");
 }
-
-
-
-
 else{
   echo " UANGME ".$response."\n";
 }
-else{
-  echo " ADIRAKU ".$response."\n";
-}
-else{
-  echo " ADIRAKU ".$response."\n";
-}
-else{
-  echo " ADIRAKU ".$response."\n";
-}
-else{
-  echo " ADIRAKU ".$response."\n";
-}
-echo color("yellow"," Done Sensei..\n");
+
+
+lsU cho color("yellow"," Done Sensei..\n");
 sleep(3);
 goto lagi;
 
